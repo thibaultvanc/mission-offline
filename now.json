@@ -1,0 +1,17 @@
+{
+    "version": 2,
+    "name": "mission-offline-nuxt",
+    "alias" : "mission-offline.info53.now.sh",
+    "builds": [
+        { "src": "package.json", "use": "@now/static-build" }
+    ],
+    "build": {
+        "env": {
+            "DEBUG":"false",
+            "LARAVEL_ENDPOINT": "https://adn-protection.organit.fr",
+            "ONESIGNAL_APP_ID": "6c5366d4-9d56-4b17-b3e0-9dea3a0c5632",
+            "LARAVEL_UPLOAD_TIMEOUT_MILLISECOND":"36000000",
+            "LARAVEL_UPLOAD_MAX_FILESIZE":"100"
+        }
+      }
+  }
