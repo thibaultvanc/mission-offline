@@ -5,9 +5,7 @@ require('dotenv').config()
 export default {
 	mode: 'spa',
 
-	/*
-	** Headers of the page
-	*/
+	
 	head: {
 		title: pkg.name,
 		meta: [
