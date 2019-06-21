@@ -18,13 +18,15 @@
       :to="switchLocalePath(locale.code)"
       >{{ locale.name }}</v-btn
     > -->
+    <img src="~/assets/img/logo.png" style="height:50px" />
+    Mission Offline
 
     <v-spacer />
     <!-- <nuxt-link to="/theme">Theme</nuxt-link> -->
     <v-spacer />
     <span class="font-weight-light copyright">
       <v-spacer />
-      <img src="/img/logo/logo.png" style="height:50px" /> MissionOffline &copy;
+      &copy;
       <span> {{ $moment().format('dddd Do MMMM YYYY, HH:mm') }}</span>
     </span>
   </v-footer>

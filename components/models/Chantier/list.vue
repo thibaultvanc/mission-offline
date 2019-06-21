@@ -7,15 +7,14 @@
   >
     <template slot="line" slot-scope="{ item: chantier }">
       <!-- <pre class="mt-5"><b>formCmpnt :</b> {{formCmpnt}}</pre> -->
-      <!-- <v-list-tile-avatar>
-        <img :src="chantier.avatar" />
-      </v-list-tile-avatar> -->
+      <v-list-tile-avatar>
+        <img :src="chantier.photo" />
+      </v-list-tile-avatar>
 
       <v-list-tile-content>
         <v-list-tile-title
-          >#{{ chantier.id }} -- {{ chantier.name }}</v-list-tile-title
+          ><b>#{{ chantier.id }}</b> -- {{ chantier.name }}</v-list-tile-title
         >
-        <v-list-tile-sub-title>{{ chantier }} </v-list-tile-sub-title>
       </v-list-tile-content>
     </template>
 

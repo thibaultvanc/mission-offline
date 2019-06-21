@@ -73,48 +73,8 @@ export default {
       links: [
         {
           to: '/admin',
-          icon: 'mdi-view-dashboard',
-          text: 'Tableau de bord'
-        },
-        {
-          to: '/admin/chantiers',
           icon: 'mdi-webpack',
           text: 'Chantiers'
-        },
-        {
-          to: '/admin/stock',
-          icon: 'mdi-chart-bubble',
-          text: 'Stock'
-        },
-        {
-          to: '/admin/Qr-codes',
-          icon: 'mdi-qrcode',
-          text: 'Qr Codes'
-        },
-        {
-          to: '/admin/users',
-          icon: 'mdi-account',
-          text: 'Utilisateurs'
-        },
-        {
-          to: '/admin/analysis',
-          icon: 'mdi-chart-areaspline',
-          text: 'Analyses'
-        },
-        {
-          to: '/admin/companies',
-          icon: 'mdi-summit',
-          text: 'Sociétés'
-        },
-        {
-          to: '/admin/invoicing',
-          icon: 'mdi-file-document',
-          text: 'Facturation'
-        },
-        {
-          to: '/admin/settings',
-          icon: 'mdi-settings',
-          text: 'Paramétrages'
         }
       ]
     }
