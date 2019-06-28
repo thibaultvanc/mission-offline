@@ -5,7 +5,7 @@ require('dotenv').config()
 export default {
 	mode: 'spa',
 
-	
+
 	head: {
 		title: pkg.name,
 		meta: [
@@ -53,20 +53,21 @@ export default {
 	plugins: [
 		'~/plugins/axios.js',
 		'~/plugins/models.js',
-		'~/plugins/vuetify.js', 
+		'~/plugins/vuetify.js',
     '~/plugins/moment',
-    '~/plugins/mainMixin', 
-    '~/plugins/chartist'
-	],
+    '~/plugins/mainMixin',
+    '~/plugins/chartist',
+    '~/plugins/bus',
+  ],
 
 	/*
 	** Nuxt.js modules
 	*/
 	modules: [
-		'@nuxtjs/dotenv', 
-		'@nuxtjs/onesignal', 
-		'@nuxtjs/axios', 
-		'@nuxtjs/auth', 
+		'@nuxtjs/dotenv',
+		'@nuxtjs/onesignal',
+		'@nuxtjs/axios',
+		'@nuxtjs/auth',
 		'@nuxtjs/pwa',
 		['nuxt-i18n', {
       defaultLocale: 'fr',
@@ -97,7 +98,7 @@ export default {
       langDir: 'lang/'
     }]
   ],
-	
+
 
 
 	/*
@@ -115,6 +116,41 @@ export default {
             }
           }
 	},
+
+  /*
+	** @nuxtjs/pwa module configuration
+	*/
+  workbox: {
+    globPatterns: ['**/*.{js,css}', '**/img/*'],
+    offlinePage: '/',
+    offlineAssets: [
+      '/img/drawer/lake-montain.jpg'
+    ],
+    runtimeCaching: [
+      {
+        urlPattern: 'https://adn-protection.organit.fr/api/auth',
+        strategyOptions: {
+          cacheName: 'auth'
+        }
+      },
+      {
+        urlPattern: 'https://adn-protection.organit.fr/api/chantier',
+        strategyOptions: {
+          cacheName: 'chantiers'
+        }
+      },
+      {
+        urlPattern: 'https://adn-protection.organit.fr/api/chantier/.*',
+        strategyOptions: {
+          cacheName: 'chantiers-details',
+          cacheExpiration: {
+            maxEntries: 50,
+            maxAgeSeconds: 300
+          }
+        }
+      }
+    ]
+  },
 
 
 	/*
@@ -167,7 +203,7 @@ export default {
     ** Build configuration
     */
     build: {
-        
+
     transpile: ['vuetify/lib'],
     plugins: [new VuetifyLoaderPlugin()],
     loaders: {
@@ -175,7 +211,7 @@ export default {
         import: ['~assets/style/variables.styl']
       }
     },
-    
+
 
 
         /*
