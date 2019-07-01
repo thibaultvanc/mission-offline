@@ -124,9 +124,21 @@ export default {
     globPatterns: ['**/*.{js,css}', '**/img/*'],
     offlinePage: '/',
     offlineAssets: [
+      /*
+      Il faut ajouter ici tous les assets qui doivent être pré-chargés
+      pour le mode offline. Ici j'ai ajouter l'image du Drawer.
+      Le glob patterne juste en haut permet de mettre en cache toutes les images
+      mais seulement si elles ont été chargées au moins une fois.
+      Ici on peut forcer le pré-chargement.
+       */
       '/img/drawer/lake-montain.jpg'
     ],
     runtimeCaching: [
+      /*
+      Ici, on met la liste des routes qu'on a envie de mettre en cache pour le offline.
+      On peut ajouter des options mais c'est assez limité. Comme par exemple pour le
+      3eme cas, on lui demande de garder que 50 requetes et 300 secondes max.
+       */
       {
         urlPattern: 'https://adn-protection.organit.fr/api/auth',
         strategyOptions: {
@@ -144,8 +156,8 @@ export default {
         strategyOptions: {
           cacheName: 'chantiers-details',
           cacheExpiration: {
-            maxEntries: 50,
-            maxAgeSeconds: 300
+            maxEntries: 50
+            // maxAgeSeconds: 300
           }
         }
       }
@@ -157,7 +169,7 @@ export default {
 	** @nuxtjs/axios module configuration
 	*/
 	axios: {
-		baseURL : process.env.LARAVEL_ENDPOINT
+    baseURL : 'https://adn-protection.organit.fr'
 	},
 
 

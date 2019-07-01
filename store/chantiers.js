@@ -319,7 +319,7 @@ export const mutations = {
   update(state, obj) {
     const listId = findIndex(state.list, { id: obj.id })
     state.list[listId] = obj
-    state.list = cloneDeep(state.list) // Hack pour forcer le refresh
+    state.list = cloneDeep(state.list) // Hack pour forcer le refresh avec VueX
   },
   remove(state, obj) {
     state.list.splice(state.list.indexOf(obj), 1)
